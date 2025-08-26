@@ -1,4 +1,4 @@
-var loader= getElementById("pre-loader");
+var loader= document.getElementById("pre-loader");
 
 window.addEventListener("load",function() {
 	setTimeout(function(){
