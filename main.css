@@ -27,7 +27,7 @@
 }
 
 #pre-loader{
-  background: url(loader.gif) no-repeat center center;
+  background: #000000 url(loader.gif) no-repeat center center;
   background-size: 100vh;
   height: 100%;
   width: 100%;
