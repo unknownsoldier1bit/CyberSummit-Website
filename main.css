@@ -28,7 +28,7 @@
 
 #pre-loader{
   background: #b7c29d url(loader.gif) no-repeat center center;
-  background-size: 15% 30%; /* Percentage of the screen size */
+  background-size: 20% 30%; /* Percentage of the screen size */
   height: 100vh;
   width: 100vw;
   position: fixed;
