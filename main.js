@@ -1,7 +1,11 @@
-var loader= document.getElementById("pre-loader");
+var loader = document.getElementById("pre-loader");
 
-window.addEventListener("load",function() {
-	setTimeout(function(){
-		loader.style.display = "none";
-	}, 1500);
+// Show loader immediately, don't wait for full page load
+document.addEventListener("DOMContentLoaded", function() {
+    // Keep loader visible longer for masked domains
+    setTimeout(function(){
+        if (loader) {
+            loader.style.display = "none";
+        }
+    }, 3000); // Increased from 1500ms
 });
