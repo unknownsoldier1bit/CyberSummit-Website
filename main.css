@@ -28,9 +28,9 @@
 
 #pre-loader{
   background: #000000 url(loader.gif) no-repeat center center;
-  background-size: contain; /* This will show your GIF properly sized */
-  height: 100vh; /* Changed from 100% */
-  width: 100vw;  /* Changed from 100% */
+  background-size: 5% 5%; /* Percentage of the screen size */
+  height: 100vh;
+  width: 100vw;
   position: fixed;
   z-index: 100;
   top: 0;
