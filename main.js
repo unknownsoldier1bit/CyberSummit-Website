@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (loader) {
             loader.style.display = "none";
         }
-    }, 4000); // Increased from 1500ms
+    }, 2000); // Increased from 1500ms
 });
+
 
