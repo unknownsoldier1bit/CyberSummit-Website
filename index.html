@@ -3,26 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SFHS CYBERSUMMT - Robotics Competition</title>
+    <title>SFHS CYBERSUMMIT - Robotics Competition</title>
     <link rel="stylesheet" href="style.css">
     <script src="java.js" defer></script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="school logo.png" alt="School Logo" class="school-logo">
-                <span class="logo-text">SFHS CYBERSUMMIT</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="schedule.html">Schedule</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+    <nav class="navbar desktop-nav">
+    <div class="nav-container">
+        <div class="logo">
+            <img src="school logo.png" alt="School Logo" class="school-logo">
+            <span class="logo-text">SFHS CYBERSUMMIT</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<nav class="navbar mobile-nav">
+    <div class="nav-container">
+        <div class="nav-left">
+            <span class="logo-text">SFHS CYBERSUMMIT</span>
+        </div>
+        <div class="nav-center">
+            <a href="index.html"><img src="school logo.png" alt="School Logo" class="school-logo"></a>
+        </div>
+        <div class="nav-right">
             <div class="mobile-menu"><span></span><span></span><span></span></div>
         </div>
-    </nav>
+    </div>
+</nav>
+
+<ul class="nav-links-mobile">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="schedule.html">Schedule</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
     <section class="hero">
         <div class="hero-background">
             <video autoplay muted loop class="background-video">
