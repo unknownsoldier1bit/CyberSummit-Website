@@ -308,10 +308,6 @@ body.page-contact .page-background-static { background-image: url('contact.jpeg'
 /* =================================
    Responsive Design
    ================================= */
-
-/* =================================
-   Responsive Design
-   ================================= */
 @media (max-width: 768px) {
     /* General Mobile Styles */
     .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: rgba(10, 10, 10, 0.98); flex-direction: column; padding: 1rem 0; border-top: 1px solid var(--border-color); }
@@ -328,26 +324,26 @@ body.page-contact .page-background-static { background-image: url('contact.jpeg'
     .cta-section { flex-direction: column; align-items: center; }
     .contact-container { grid-template-columns: 1fr; }
 
-    /* NEW: Mobile-Friendly Schedule Timeline */
+    /* CORRECTED: Mobile-Friendly Schedule Timeline */
     .timeline::after {
-        left: 30px; /* Position the line to the left */
+        left: 18px; /* Moves the main vertical line to the left */
     }
 
     .timeline-item {
         width: 100%;
-        padding-left: 70px; /* Add space for the content */
+        padding-left: 70px; /* Gives space for the content */
         padding-right: 25px;
     }
     
     .timeline-item.left,
     .timeline-item.right {
         left: 0;
-        text-align: left; /* Align all text to the left */
+        text-align: left; /* Aligns all text to the left */
     }
 
     .timeline-item.left::after,
     .timeline-item.right::after {
-        left: 20px; /* Position the circle marker on the line */
+        left: 18px; /* Perfectly centers the circle on the line */
     }
 }
 
