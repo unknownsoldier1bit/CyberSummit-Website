@@ -170,11 +170,11 @@ body.page-contact .page-background-static { background-image: url('contact.jpeg'
     color: #ffffff;
 }
 .event-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); }
-.card-content { position: relative; z-index: 2; flex-grow: 1; } /* FIXED */
-.card-front, .card-back { transition: opacity 0.4s ease-in-out; } /* FIXED */
-.card-back { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; text-align: left; } /* FIXED */
-.event-card.is-flipped .card-front { opacity: 0; pointer-events: none; } /* FIXED */
-.event-card.is-flipped .card-back { opacity: 1; pointer-events: auto; } /* FIXED */
+.card-content { position: relative; z-index: 2; flex-grow: 1; }
+.card-front, .card-back { transition: opacity 0.4s ease-in-out; }
+.card-back { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; text-align: left; }
+.event-card.is-flipped .card-front { opacity: 0; pointer-events: none; }
+.event-card.is-flipped .card-back { opacity: 1; pointer-events: auto; }
 .event-icon { font-size: 4rem; margin-bottom: 1.5rem; }
 .event-card h3 { font-size: 1.8rem; margin-bottom: 1rem; color: #ffffff; }
 .event-card p { color: rgba(255, 255, 255, 0.8); line-height: 1.6; }
@@ -197,22 +197,30 @@ body.page-contact .page-background-static { background-image: url('contact.jpeg'
 .page-subtitle { font-size: 1.3rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.6; }
 
 /* Contact Page */
-.contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; padding-bottom: 4rem; }
-.contact-info, .message-section { background: var(--card-bg); backdrop-filter: blur(15px); border: 1px solid var(--border-color); color: #ffffff; border-radius: 15px; padding: 2.5rem; transition: var(--transition); }
-.contact-info:hover, .message-section:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); }
+.contact-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    padding-bottom: 4rem;
+}
+.contact-info {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-color);
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 2.5rem;
+    transition: var(--transition);
+    max-width: 500px;
+    width: 100%;
+}
+.contact-info:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); }
 .contact-title { font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem; color: #ffffff; text-align: center; }
 .contact-item { display: flex; align-items: center; margin-bottom: 1.5rem; padding: 1rem; background: rgba(0, 0, 0, 0.1); border-radius: 10px; transition: var(--transition); }
 .contact-item:hover { background: rgba(255, 255, 255, 0.1); transform: translateX(10px); }
 .contact-icon { font-size: 2rem; margin-right: 1rem; width: 50px; text-align: center; color: var(--text-primary); }
 .contact-details h3 { color: #ffffff; margin-bottom: 0.5rem; } 
 .contact-details p, .contact-details a { color: rgba(255, 255, 255, 0.8); text-decoration: none;} 
-.email-button { display: inline-block; padding: 15px 30px; background: var(--text-primary); color: var(--primary-bg); text-decoration: none; border-radius: 30px; font-weight: bold; transition: var(--transition); border: none; }
-.email-button:hover { transform: scale(1.05) translateY(-3px); box-shadow: var(--shadow-glow); }
-.form-group { margin-bottom: 1.5rem; }
-.form-group label { display: block; margin-bottom: 0.5rem; color: rgba(255, 255, 255, 0.8); font-weight: 500; }
-.form-group input, .form-group textarea { width: 100%; padding: 0.8rem 1rem; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); border-radius: 8px; color: #ffffff; font-size: 1rem; transition: var(--transition); }
-.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--text-primary); }
-#contact-form button.email-button { width: 100%; cursor: pointer; font-size: 1.1rem; }
 
 /* Schedule Page */
 .timeline { position: relative; max-width: 800px; margin: 3rem auto; padding-bottom: 4rem; }
@@ -306,7 +314,9 @@ body.page-contact .page-background-static { background-image: url('contact.jpeg'
     .events-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .event-card { padding: 2rem; }
     .cta-section { flex-direction: column; align-items: center; }
-    .contact-container { grid-template-columns: 1fr; }
+    .contact-container {
+        display: block;
+    }
 
     .hero-title, .section-title, .page-title {
         font-size: 2.2rem;
@@ -319,8 +329,8 @@ body.page-contact .page-background-static { background-image: url('contact.jpeg'
     .page-title {
         background: none;
         -webkit-text-fill-color: initial;
-        color: #ffffff; /* Sets text to plain white */
-        text-shadow: none; /* Removes any text effects */
+        color: #ffffff;
+        text-shadow: none;
     }
 
     .timeline::after { left: 21px; }
