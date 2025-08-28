@@ -45,16 +45,18 @@ body {
 }
 
 .nav-container {
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    padding: 0 2rem;
 }
 
 /* Desktop Navigation Styles */
 .desktop-nav .nav-container {
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 22px;
 }
 
 .logo {
@@ -63,6 +65,7 @@ body {
     gap: 0.75rem;
     font-size: 1.5rem;
     font-weight: 800;
+    text-decoration: none;
 }
 
 .school-logo {
@@ -71,6 +74,8 @@ body {
 }
 
 .logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -176,7 +181,7 @@ body.page-contact .page-background-static { background-image: url('contact.jpeg'
 .card-back h4 { color: #ffffff; margin-bottom: 1rem; font-size: 1.2rem; }
 .card-back p { margin-bottom: 0.5rem; font-size: 0.95rem; }
 .rule-button {
-    position: relative; z-index: 3; margin-top: auto; padding: 0.8rem 2rem; border-radius: 30px; font-weight: 600;
+    position: relative; z-index: 3; margin-top: 2.5rem; padding: 0.8rem 2rem; border-radius: 30px; font-weight: 600;
     border: 1px solid var(--text-secondary); background: transparent; color: var(--text-secondary); cursor: pointer;
     transition: var(--transition);
 }
@@ -243,6 +248,7 @@ body.page-contact .page-background-static { background-image: url('contact.jpeg'
         display: grid;
         grid-template-columns: 1fr auto 1fr;
         align-items: center;
+        padding: 0 18px;
     }
     
     .mobile-nav .nav-left { grid-column: 1; text-align: left; }
