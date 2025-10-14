@@ -11,18 +11,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 2. Active Navigation Link Indicator ---
-    const currentPage = window.location.pathname.split('/').pop();
-    const navAnchors = document.querySelectorAll('.desktop-nav .nav-links a, .nav-links-mobile a'); 
+    // --- 2. Active Navigation Link Indicator (Robust Version) ---
+    // This new version is more reliable on live servers.
+    const currentPath = window.location.pathname;
+    const navAnchors = document.querySelectorAll('.desktop-nav .nav-links a, .nav-links-mobile a');
+
     navAnchors.forEach(link => {
-        const linkPage = link.getAttribute('href');
+        const linkPath = new URL(link.href).pathname;
+        
+        // Remove any existing 'active' class
         link.classList.remove('active');
-        if ((currentPage === '' || currentPage === 'index.html') && linkPage === 'index.html') {
-            link.classList.add('active');
-        } else if (linkPage === currentPage) {
+
+        // Check if the link's path matches the current page's path.
+        // Also handle the special case for the homepage ('/' or '/index.html').
+        if (currentPath === linkPath || (currentPath === '/' && linkPath.endsWith('index.html'))) {
             link.classList.add('active');
         }
     });
+
 
     // --- 3. Countdown Timer Logic ---
     const countDownDate = new Date("Nov 15, 2025 08:00:00").getTime();
@@ -78,3 +84,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
