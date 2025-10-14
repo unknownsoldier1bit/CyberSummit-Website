@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const secondsEl = document.getElementById("seconds");
 
         if (daysEl && hoursEl && minutesEl && secondsEl) {
-            const x = setInterval(function() {
+            const x = setInterval(() => {
                 const now = new Date().getTime();
                 const distance = countDownDate - now;
 
                 if (distance < 0) {
                     clearInterval(x);
-                    countdownContainer.innerHTML = "<div class='event-live'>The Event is Live!</div>";
+                    document.getElementById("countdown-container").innerHTML = "<div class='event-live'>The Event is Live!</div>";
                 } else {
                     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -63,17 +63,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const eventCard = button.closest('.event-card');
             const isFlipped = eventCard.classList.toggle('is-flipped');
             
-            // If this card was flipped, update the button text
-            button.textContent = isFlipped ? 'View Description' : 'Unveil Protocol';
-
-            // Unflip any other flipped cards
+            // Optional: Unflip other cards when one is flipped
             document.querySelectorAll('.event-card.is-flipped').forEach(card => {
                 if (card !== eventCard) {
                     card.classList.remove('is-flipped');
-                    // Also reset their button text
+                    card.querySelector('.rule-button').classList.remove('active');
                     card.querySelector('.rule-button').textContent = 'Unveil Protocol';
                 }
             });
+
+            button.classList.toggle('active');
+            button.textContent = isFlipped ? 'Hide Protocol' : 'Unveil Protocol';
         });
     });
+
 });
