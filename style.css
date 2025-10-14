@@ -222,6 +222,83 @@ body.page-contact .page-background-static { background-image: url('contact.jpeg'
 .contact-details h3 { color: #ffffff; margin-bottom: 0.5rem; } 
 .contact-details p, .contact-details a { color: rgba(255, 255, 255, 0.8); text-decoration: none;} 
 
+/* =================================
+   Team Page
+   ================================= */
+.team-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 4rem;
+}
+
+.team-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.team-member-card {
+    background: transparent;
+    width: 45%;
+}
+
+.team-member-photo {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.team-member-photo:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.team-member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,1) 10%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0) 100%);
+}
+
+.team-member-name {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.team-member-role {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* Responsive styles for Team Page */
+@media (max-width: 768px) {
+    .team-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 0;
+    }
+    .team-member-card {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 1.5rem;
+    }
+}
+
 /* Schedule Page */
 .timeline { position: relative; max-width: 800px; margin: 3rem auto; padding-bottom: 4rem; }
 .timeline::after { content: ''; position: absolute; width: 4px; background: var(--gradient-primary); top: 0; bottom: 0; left: 50%; border-radius: 2px; box-shadow: 0 0 10px var(--shadow-glow); transform: translateX(-50%); }
