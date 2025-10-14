@@ -150,6 +150,20 @@ body.page-contact .page-background-static { background-image: url('contact.jpeg'
 .secondary-btn:hover { background: #ffffff; color: var(--primary-bg); }
 
 /* Events Page */
+.events-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+    margin: 4rem 0;
+}
 
 .events-preview { padding: 8rem 0; position: relative; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
