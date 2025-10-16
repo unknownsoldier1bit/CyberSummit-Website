@@ -245,6 +245,15 @@ body.page-contact .page-background-static { background-image: url('contact.jpeg'
     padding-bottom: 4rem;
 }
 
+.team-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
 .team-row {
     display: flex;
     justify-content: center;
@@ -260,7 +269,6 @@ body.page-contact .page-background-static { background-image: url('contact.jpeg'
 }
 
 .team-border {
-    /* MODIFICATION: Increased height from 400px to 500px */
     height: 500px; 
     width: auto;
     flex-shrink: 0;
@@ -312,28 +320,6 @@ body.page-contact .page-background-static { background-image: url('contact.jpeg'
 .team-member-role {
     color: var(--text-secondary);
     font-size: 1rem;
-}
-
-
-/* Responsive styles for Team Page */
-@media (max-width: 768px) {
-    .team-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-        margin-bottom: 0;
-    }
-    .team-member-layout {
-        width: 100%;
-        max-width: 400px;
-        margin-bottom: 1.5rem;
-    }
-    .team-border {
-        display: none; /* Hide borders on smaller screens */
-    }
-    .team-member-card {
-        margin: 0; /* Reset margin on mobile */
-    }
 }
 /* Schedule Page */
 .timeline { position: relative; max-width: 800px; margin: 3rem auto; padding-bottom: 4rem; }
