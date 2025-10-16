@@ -11,24 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 2. Active Navigation Link Indicator (Robust Version) ---
-    // This new version is more reliable on live servers.
-    const currentPath = window.location.pathname;
-    const navAnchors = document.querySelectorAll('.desktop-nav .nav-links a, .nav-links-mobile a');
-
+    // --- 2. Active Navigation Link Indicator ---
+    const currentPage = window.location.pathname.split('/').pop();
+    const navAnchors = document.querySelectorAll('.desktop-nav .nav-links a, .nav-links-mobile a'); 
     navAnchors.forEach(link => {
-        const linkPath = new URL(link.href).pathname;
-        
-        // Remove any existing 'active' class
+        const linkPage = link.getAttribute('href');
         link.classList.remove('active');
-
-        // Check if the link's path matches the current page's path.
-        // Also handle the special case for the homepage ('/' or '/index.html').
-        if (currentPath === linkPath || (currentPath === '/' && linkPath.endsWith('index.html'))) {
+        if ((currentPage === '' || currentPage === 'index.html') && linkPage === 'index.html') {
+            link.classList.add('active');
+        } else if (linkPage === currentPage) {
             link.classList.add('active');
         }
     });
-
 
     // --- 3. Countdown Timer Logic ---
     const countDownDate = new Date("Nov 15, 2025 08:00:00").getTime();
@@ -40,13 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const secondsEl = document.getElementById("seconds");
 
         if (daysEl && hoursEl && minutesEl && secondsEl) {
-            const x = setInterval(() => {
+            const x = setInterval(function() {
                 const now = new Date().getTime();
                 const distance = countDownDate - now;
 
                 if (distance < 0) {
                     clearInterval(x);
-                    document.getElementById("countdown-container").innerHTML = "<div class='event-live'>The Event is Live!</div>";
+                    countdownContainer.innerHTML = "<div class='event-live'>The Event is Live!</div>";
                 } else {
                     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -69,19 +63,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const eventCard = button.closest('.event-card');
             const isFlipped = eventCard.classList.toggle('is-flipped');
             
-            // Optional: Unflip other cards when one is flipped
+            // If this card was flipped, update the button text
+            button.textContent = isFlipped ? 'View Description' : 'More Information';
+
+            // Unflip any other flipped cards
             document.querySelectorAll('.event-card.is-flipped').forEach(card => {
                 if (card !== eventCard) {
                     card.classList.remove('is-flipped');
-                    card.querySelector('.rule-button').classList.remove('active');
-                    card.querySelector('.rule-button').textContent = 'Unveil Protocol';
+                    // Also reset their button text
+                    card.querySelector('.rule-button').textContent = 'More Information';
                 }
             });
-
-            button.classList.toggle('active');
-            button.textContent = isFlipped ? 'Hide Protocol' : 'Unveil Protocol';
         });
     });
-
 });
-
